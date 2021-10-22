@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="5" failures="0" time="66.572">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-06-16T08:16:55" time="40.862" tests="5">
+    <testcase classname=" initial UI is rendered as expected" name=" initial UI is rendered as expected" time="0.045">
+    </testcase>
+    <testcase classname=" Flight search works as expected - search 1" name=" Flight search works as expected - search 1" time="0.353">
+    </testcase>
+    <testcase classname=" Flight search works as expected - search 2" name=" Flight search works as expected - search 2" time="0.063">
+    </testcase>
+    <testcase classname=" Shows No Flights Found when no matches found" name=" Shows No Flights Found when no matches found" time="0.118">
+    </testcase>
+    <testcase classname=" Perform series of operation" name=" Perform series of operation" time="0.253">
+    </testcase>
+  </testsuite>
+</testsuites>
