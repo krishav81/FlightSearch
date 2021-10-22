@@ -2,22 +2,11 @@ import React, {useState} from "react";
 import "./index.css";
 import SearchComponent from "./search"
 
-
-
 function FlightSearch ({flightsData}) {
     
     
-    const [flightInput, setFlightInput] = useState({
-        sourceInput : "",
-        destinationInput : ""
-    });
-    
+    const [flightInput, setFlightInput] = useState({});
     const [filteredData , setFilteredData] = useState(null);
-    
-    const handleChange = (event)=>{
-        const {name,value} = event.target;
-        setFlightInput({...flightInput, [name] : value})
-    }
     
     const filterTheData = ()=>{
         const filteredData = flightsData.filter((flight)=>(
@@ -30,7 +19,6 @@ function FlightSearch ({flightsData}) {
     const handleOnClick = (event) => {
         event.preventDefault();
         filterTheData();
-        
     }
     
     return(
@@ -40,15 +28,17 @@ function FlightSearch ({flightsData}) {
             <input 
             type = "text"
             name = "sourceInput"
-            value = {flightInput.sourceInput}
-            onChange = {handleChange}
+            onChange={(e)=>{
+            setFlightInput({...flightInput,sourceInput:e.target.value});
+          }}
             data-testid="source-input"
             />
             <input 
             type = "text" 
             name = "destinationInput"
-            value = {flightInput.destinationInput}
-            onChange = {handleChange}
+            onChange={(e)=>{
+            setFlightInput({...flightInput,destinationInput:e.target.value});
+          }}
             data-testid="destination-input"
             />
             <button onClick={handleOnClick} data-testid="search-button">Search</button>
