@@ -3,10 +3,11 @@ import "./index.css";
 
 function SearchComponent(obj)
 {
+    const { filteredData } = obj;
     const renderOnCondition = () => {
-        if(obj.filteredData == null)
+        if(filteredData == null)
             return;
-        if(obj.filteredData.length == 0)
+        if(filteredData.length == 0)
             return ((
                 <div data-testid="no-flights">No flights found</div>
             ))
@@ -21,7 +22,7 @@ function SearchComponent(obj)
                     </thead>
                     <tbody data-testid="flight-results">
                         {
-                        obj.filteredData.map((flight) =>(
+                        filteredData.map((flight) =>(
                             <tr key={flight.id}>
                                 <td>{flight.takeoff_timestamp}</td>
                                 <td>{flight.duration}</td>
